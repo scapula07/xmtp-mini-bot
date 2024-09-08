@@ -6,7 +6,7 @@ import { handler as agent } from "./handler/agent.js";
 import { handler as transaction } from "./handler/transaction.js";
 import { handler as splitpayment } from "./handler/payment.js";
 import { handler as games } from "./handler/game.js";
-import { handler as admin } from "./handler/admin.js";
+// import { handler as admin } from "./handler/admin.js";
 import { handler as loyalty } from "./handler/loyalty.js";
 
 // Define command handlers
@@ -21,9 +21,9 @@ const commandHandlers: CommandHandlers = {
   "/points": loyalty,
   "/leaderboard": loyalty,
   "/game": games,
-  "/add": admin,
-  "/remove": admin,
-  "/name": admin,
+  // "/add": admin,
+  // "/remove": admin,
+  // "/name": admin,
   "/help": async (context: HandlerContext) => {
     const intro =
       "Available experiences:\n" +
@@ -57,7 +57,7 @@ run(async (context: HandlerContext) => {
         handleReply(context);
         break;
       case "group_updated":
-        admin(context);
+        // admin(context);
         loyalty(context);
         break;
       case "remoteStaticAttachment":
