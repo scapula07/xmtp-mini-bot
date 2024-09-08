@@ -1,6 +1,6 @@
 import { run, HandlerContext, CommandHandlers } from "@xmtp/message-kit";
 import { commands } from "./commands.js";
-import { handler as bet } from "./handler/betting.js";
+
 import { handler as tipping } from "./handler/tipping.js";
 import { handler as agent } from "./handler/agent.js";
 import { handler as transaction } from "./handler/transaction.js";
@@ -13,7 +13,7 @@ import { handler as loyalty } from "./handler/loyalty.js";
 const commandHandlers: CommandHandlers = {
   "/tip": tipping,
   "/agent": agent,
-  "/bet": bet,
+
   "/send": transaction,
   "/swap": transaction,
   "/mint": transaction,
@@ -21,9 +21,7 @@ const commandHandlers: CommandHandlers = {
   "/points": loyalty,
   "/leaderboard": loyalty,
   "/game": games,
-  // "/add": admin,
-  // "/remove": admin,
-  // "/name": admin,
+
   "/help": async (context: HandlerContext) => {
     const intro =
       "Available experiences:\n" +
